@@ -1,0 +1,194 @@
+html,body{
+  font-size:100%;
+  box-sizing: border-box;
+}
+
+/*header*/
+.au-header__brand .au-header__brand-image{
+  max-width:15rem;
+}
+.au-body.au-body--dark{background: #0080A2;}
+.au-header {padding:1.8rem 0;!important}
+.au-btn--secondary {background-color: #ffffff!important;}
+.banner {padding:1rem; background-color:#313131;color:#fff;}
+.banner a {color:#fff;}
+.banner a:hover, .banner a:focus {color:#fff;}
+
+/* Buttons */
+.btn-edit,.btn-delete{
+  padding: .5rem;
+  display: block;
+}
+
+/*organisation*/
+.organisation{
+  margin:-2rem 0 3rem 0;
+  padding: 4rem 0 2rem 0;
+  background: #fafafa;
+  border-bottom: 1px solid #e1e8ed;
+  color: #454545;
+}
+.organisation .org-logo {
+
+}
+/* modal */
+.modal-dialog {max-width:55%;}
+/* Student grid */
+.student-details ul.grid {
+  list-style:none;
+  margin:3rem 0;
+  padding:0;
+  float: left;
+  width:100%;
+}
+.student-details ul.grid li{
+  width:100%;
+  display: block;
+  border-bottom: .07rem dashed #ebedf2;
+  float: left;
+  vertical-align:middle;
+}
+.student-details ul.grid li:nth-child(2n){background-color:whitesmoke;}
+.student-details ul.grid li:first-child{border-top: .07rem dashed #ebedf2;}
+.student-details ul.grid li div {float:left;padding:1rem;vertical-align: middle;}
+.student-details .student{width:40%;}
+.student-details .student-name {font-weight:600;display: block;}
+.student-details .student-arn {color:#676767;}
+.student-details .edit {width:25%;}
+.student-details .delete {width:30%;}
+.payment-summary{margin-bottom: 3rem;}
+
+
+ /* Licence */
+.licence-card {
+  display: block;
+  padding:1rem 1rem .3rem;
+  overflow: hidden;
+  background: #f9f9f9;
+  border-radius: 0px;
+  margin: 1rem 0;
+  font-weight:300;
+  font-size:1.2rem;
+  border-left:3px solid #e0dddd;
+ }
+.licence-header {margin-bottom:.5rem;}
+.licence-header .licence-title {
+   font-weight:500;
+ }
+.licence-date {color:#585858;}
+.licence-header .licence-date {float:right; font-size:1rem;font-weight:300;}
+.licence-body {font-size:1rem;}
+.licence-footer {border-top:1px solid #efefef;font-size:1rem;padding:.5rem 0;margin-top:.8rem;}
+.licence-footer .licence-status-title {font-weight:500;}
+/*helpers*/
+.m-t-0{margin-top:0rem!important;}
+.m-t-1{margin-top:.8rem!important;}
+.m-t-2{margin-top:2rem!important;}
+.save-exit{margin-top:4rem;border-top:1px solid #e1e8ed;padding:2rem 0;}
+.hidden {display: none; visibility: hidden;height:0px;}
+/*Form help*/
+label,.label{
+  display: block!important;
+  max-width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.au-text-input {width:100%!important;}
+.form-text{
+  color: #676767;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.form-section{
+  display: block;
+  width: 100%;
+  float:left;
+  margin: .5rem 0 1rem 0;
+}
+.form-required{
+  color: #bc111e;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+.date-entry{
+	margin-top:1rem;
+}
+
+.date-entry label{
+	font-size:.875rem;
+}
+
+.date-entry .date-day, .date-entry .date-month{
+	width:25%;
+	margin-right:2%;
+	float:left;
+}
+
+.date-entry .date-year{
+	width:46%;
+	float:left;
+}
+/*Footer*/
+.footer{
+	background:#4C4C4C;
+	margin-top:120px;
+	min-height:200px;
+}
+
+.footer-wrapper{
+	margin:auto;
+}
+
+.footer iframe{
+	margin:auto;
+	height:400px;
+	overflow:hidden;
+	width:100%;
+}
+/* hidden viewport */
+/*.lg-hidden{
+  display:none;
+  visibility: hidden;
+}*/
+/* Responsive */
+@media only screen and (max-width: 1024px) {
+  .modal-dialog{
+    max-width: 70%;
+  }
+}
+@media only screen and (max-width: 640px) {
+  /*.lg-hidden{
+    display:block;
+    visibility:visible;
+  }
+  .sm-hidden{
+    display:none;
+    visibility: hidden;
+  }*/
+  .student, .edit, .delete {diaplay:block;float: left;}
+  .organisation {
+    margin: -2rem 0 1rem 0;
+    padding: 3rem 0 1rem 0;
+  }
+  .au-body h2, .au-body .au-display-xl, .au-display-xl{font-size:1.5rem;}
+  .au-body h3, .au-body .au-display-lg, .au-display-lg {font-size:1.2rem;}
+  .modal-dialog{
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+  }
+  .modal-content {
+    border:none;
+    border-radius:0;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .student-details .student{width:45%;}
+  .student-details ul.grid li div {padding-right:0;}
+}
+@media only screen and (max-width: 420px) {
+  .student-details .edit span, .student-details .delete span{display:none; visibility: hidden;}
+}
