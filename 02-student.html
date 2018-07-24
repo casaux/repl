@@ -362,7 +362,7 @@
 		$("#arn-input, #surname-input").addClass('form-error');
 		document.getElementById("arn-error").textContent="The ARN does not match the Student's detail";
 		document.getElementById("surname-error").textContent="Please check the surname and try again";
-		if(timesClicked=>1){
+		if(timesClicked>1){
 			$( "#arn-input" ).removeClass('form-error');
 			$( "#surname-input" ).removeClass('form-error');
 			//alert(surname);
@@ -382,9 +382,9 @@
 
 
 	});
-	$('#delete-yes').click(function(){
+	/*$('#delete-yes').click(function(){
 		$('.grid li:nth-child(2n)').addClass('hidden');
-	});
+	});*/
 
 
 
