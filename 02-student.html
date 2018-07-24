@@ -81,7 +81,6 @@
 					<h3>Student not found</h3>
 				</div>
 					<h2 class="au-display-xl">Remote Pilot Licence (RePL)</h2>
-					<h3>Add Students</h3>
 					<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
 
 					<!--<div class="form-section">
@@ -152,11 +151,11 @@
 									</a>
 								</div>
 							</li>
-							<li id="none">
+							<!--<li>
 								<div class="student">
 									<span class="student-arn">No students added</span>
 								</div>
-							</li>
+							</li>-->
 							<!--<li>
 								<div class="student">
 									<span class="student-name">Ava Williams</span>
@@ -176,20 +175,22 @@
 
 						</ul>
 					</div>
+					<h3>Add Students</h3>
 					<section class="row arn-details">
-					<div class="form-section col-md-4 col-xs-12">
+					<div class="form-section col-md-12">
 						<label for="text-input">Family Name</label>
 						<input class="au-text-input" name="text-input" id="surname-input" type="text">
+						<span id="surname-error" style="color:#d82c52;"></span>
 				  </div>
-					<div class="form-section col-md-4 col-xs-12">
+					<div class="form-section col-md-12">
 						<label for="text-input">ARN</label>
 						<input class="au-text-input" name="text-input" id="arn-input" type="number">
 						<span id="arn-error" style="color:#d82c52;"></span>
 				  </div>
-					<div class="col-md-4 col-xs-12">
-						<button type="button" class="au-btn au-btn--secondary m-t-3" id="addPilot">
+					<div class=" col-md-12">
+						<button type="button" class="au-btn au-btn--secondary" id="addPilot">
 						<!--<span class="fas fa-user-plus"></span>--> Add Student
-						</button>
+					</button>
 					</div>
 				</section>
 			</div>
@@ -197,8 +198,9 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6 col-md-12"><br>
-				<a href="03-paymentsummary.html" class="au-btn">Next</a>
+			<div class="col-lg-6 col-md-12 m-t-3">
+
+				<a href="03-paymentsummary.html" class="au-btn">Finalise application</a>
 				<div class="save-exit">
 				<a href="#" class="au-btn au-btn--secondary">
 				Save and exit
@@ -329,7 +331,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="au-btn au-btn--secondary" data-dismiss="modal">No</button>
-        <button type="button" class="au-btn">Yes</button>
+        <button type="button" class="au-btn" data-dismiss="modal" id="delete-yes">Yes</button>
       </div>
     </div>
   </div>
@@ -349,24 +351,26 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
 <script>
-	$('#arn-check, #save, #warning, #error, .edit-student').hide();
-	var arn = document.getElementById("arn-input").value;
-	var surname = document.getElementById("surname-input").value;
+	$('#arn-check, #save, #warning, #error, .edit-student, .student-details').hide();
+	//var arn = document.getElementById("arn-input").value;
+	//var surname = document.getElementById("surname-input").value;
 	timesClicked = 0;
 	$('#addPilot').click(function(){
 
 		timesClicked++;
 		$('#error').show();
-		if(timesClicked>1){
+		$("#arn-input, #surname-input").addClass('form-error');
+		document.getElementById("arn-error").textContent="The ARN does not match the Student's detail";
+		document.getElementById("surname-error").textContent="Please check the surname and try again";
+		if(timesClicked=>1){
+			$( "#arn-input" ).removeClass('form-error');
+			$( "#surname-input" ).removeClass('form-error');
 			//alert(surname);
-			$('#error').hide();
-			$('#save').show();
+			$('#error, #arn-error,#surname-error').hide();
+			$('#save, .student-details').show();
 			$('.grid li:nth-child(2n)').removeClass('hidden');
 			$('#none').addClass('hidden');
 		}
-		/*else {
-			$('#error').show();
-		}*/
 		if(timesClicked>2){
 			//alert(surname);
 			$('#save').show();
@@ -378,7 +382,9 @@
 
 
 	});
-
+	$('#delete-yes').click(function(){
+		$('.grid li:nth-child(2n)').addClass('hidden');
+	});
 
 
 
