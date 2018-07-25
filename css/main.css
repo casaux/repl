@@ -167,9 +167,9 @@ label,.label{
 }*/
 /* Responsive */
 @media only screen and (max-width: 1024px) {
-  .modal-dialog{
+  /*.modal-dialog{
     max-width: 70%;
-  }
+  }*/
 }
 @media only screen and (max-width: 767px) {
   /*.lg-hidden{
@@ -187,7 +187,7 @@ label,.label{
   }
   .au-body h2, .au-body .au-display-xl, .au-display-xl{font-size:1.5rem;}
   .au-body h3, .au-body .au-display-lg, .au-display-lg {font-size:1.2rem;}
-  .modal-dialog{
+/*  .modal-dialog{
     max-width: 100%;
     margin: 0;
     border-radius: 0;
@@ -196,7 +196,7 @@ label,.label{
   .modal-content {
     border:none;
     border-radius:0;
-  }
+  }*/
   #addPilot.m-t-3 {margin-top:0!important;}
 }
 @media only screen and (max-width: 420px) {

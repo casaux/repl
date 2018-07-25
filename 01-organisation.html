@@ -84,6 +84,13 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-12">
+				<div class="in-progress">
+					<h3>Application in progress</h3>
+					<a href="#" class=" ">02 Aug 15 - Remote Pilot Licence (RePL)</a>
+					<br>
+					<span class="form-text">Multi Rotor 25kg to 150kg</span>
+				</div>
+
 					<h3>Application</h3>
 					<a href="02-course-details.html" class="au-direction-link">Remote Pilot Licence (RePL)</a>
 					<p>&nbsp;</p>
@@ -108,13 +115,18 @@
 <script type="text/javascript" src="js/furnace.min.js"></script>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
-	$('.activity, #msg-repl').hide();
+	$('.activity, #msg-repl, .in-progress').hide();
 	var type = window.location.hash.substr(1);
 	//alert (type);
-	if (type=='org-repl'){
-		$('.activity').show();
-		$('html').offset({top:0});
+	if (type=='id-progress'){
+		$('.in-progress').show();
+		//$('html').offset({top:0});
 	}
+	else if (type=='org-repl'){
+		$('.activity').show();
+		//$('html').offset({top:0});
+	}
+
 </script>
 </body>
 </html>
