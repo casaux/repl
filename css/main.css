@@ -22,7 +22,7 @@ html,body{
 .btn-canel-student{float:right;}
 /*organisation*/
 .organisation{
-  margin:-2rem 0 3rem 0;
+  margin: -2rem 0 1rem 0;
   padding: 4rem 0 2rem 0;
   /*background: #fafafa;
   border-bottom: 1px solid #e1e8ed;*/
@@ -86,6 +86,7 @@ html,body{
 .m-t-1{margin-top:.8rem!important;}
 .m-t-2{margin-top:2rem!important;}
 .m-t-3{margin-top:3rem!important;}
+.m-t-4{margin-top:4rem!important;}
 .p-t-0{padding-top:0!important;}
 .save-exit{margin-top:4rem;border-top:1px solid #e1e8ed;padding:2rem 0;}
 .hidden {display: none; visibility: hidden;height:0px;}
@@ -95,6 +96,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 .bg-dark {background-color:#bbbbbb!important;}
+.in-progress {margin-bottom:2rem;}
 /*Form help*/
 label,.label{
   display: block!important;
@@ -143,7 +145,14 @@ label,.label{
 	width:46%;
 	float:left;
 }
+/* heading */
+.au-header-heading{
+  margin-top:2rem!important;
+}
 /*Footer*/
+footer{
+  width:100%;
+}
 .footer{
 	background:#4C4C4C;
 	margin-top:120px;
