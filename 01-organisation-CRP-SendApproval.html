@@ -84,55 +84,50 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-12">
-				<div class="">
-					<h3>Applications in progress</h3>
-					<ul class="list-unstyled m-t-1">
-						<li class="row in-progress">
-							<div class="col-md-8 col-xs-8"><a href="02-course-details.html" class=" ">02 Aug 18 - Remote Pilot Licence (RePL)</a>
-							<br>
-							<span class="form-text">Multi Rotor 2kg to 25kg</span>
-							</div>
-							<div class="col-md-4 col-xs-4">
-								<a href="#" class="btn-delete padding-0" data-toggle="modal" data-target="#delete-modal-app"><span class="fas fa-minus-circle"></span> Delete <span class="sr-only">RePL application</span></a>
-							</div>
-						</li>
-						<li class="row alt-row">
-							<div class="col-md-8 col-xs-8"><a href="#" class=" ">02 Aug 18 Remote Pilot Licence (RePL)</a>
-								<br>
-								<span class="form-text">Multi Rotor 25kg to 150kg</span>
-							</div>
-							<div class="col-md-4 col-xs-4">
-								<a href="#" class="btn-delete padding-0" data-toggle="modal" data-target="#delete-modal-app"><span class="fas fa-minus-circle"></span> Delete <span class="sr-only">RePL application</span></a>
-							</div>
-						</li>
-						<li class="row">
-							<div class="col-md-8 col-xs-8"><a href="#" class=" ">28th Jul 18 RePL Remote Pilot Licence (RePL)</a>
-							<br>
-							<span class="form-text">Multi Rotor 25kg to 150kg</span>
-							</div>
-							<div class="col-md-4 col-xs-4">
-								<a href="#" class="btn-delete padding-0" data-toggle="modal" data-target="#delete-modal-app"><span class="fas fa-minus-circle"></span> Delete <span class="sr-only">RePL application</span></a>
-							</div>
-						</li>
-					</ul>
+				<div class="in-progress">
+					<h3>Application in Progress</h3>
+					<div class="row">
+						<div class="col-md-2"><span>02 Aug 18</span></div>
+						<div class="col-md-5"><a href="02-course-details.html" class=" ">Remote Pilot Licence (RePL)</a>
+						<br>
+						<span class="form-text">Multi Rotor 25kg to 150kg</span>
+						</div>
+						<div class="col-md-3">
+							<span>Incomplete</span>
+						</div>
+						<div class="col-md-2">
+							<a href="#" class="btn-delete padding-0" data-toggle="modal" data-target="#delete-modal-app"><span class="fas fa-minus-circle"></span> Delete <span class="sr-only">RePL application</span></a>
+						</div>
+					</div>
+					<!--<div class="row alt-row">
+						<div class="col-md-2"><span>02 Aug 18</span></div>
+						<div class="col-md-5"><a href="02-course-details.html" class=" ">Remote Pilot Licence (RePL)</a>
+						<br>
+						<span class="form-text">Multi Rotor 25kg to 150kg</span>
+						</div>
+						<div class="col-md-3">
+							<span>Awaiting Approval</span>
+						</div>
+						<div class="col-md-2">
+							<a href="#" class="btn-delete padding-0" data-toggle="modal" data-target="#delete-modal-app"><span class="fas fa-minus-circle"></span> Delete <span class="sr-only">RePL application</span></a>
+						</div>
+					</div>-->
 				</div>
-				<div class="activity">
-					<h3>Recently submitted application</h3>
-					<strong>RePL Application</strong><br>
-					<a href="#" class=" ">02 Aug 18 Download RePL Application (PDF | 32kB) </a>
-					<p>&nbsp;</p>
-				</div>
-				<h3>Application</h3>
-				<div id="link-deactive">
-					Remote Pilot Licence (RePL)
-					<p class="au-callout">
-						Please complete your RePL applications before starting a new one. Your are only allowed to have 3 applications in progress.
-					</p>
 
-				</div>
-				<a href="02-course-details.html" class="au-direction-link" id="link-active">Remote Pilot Licence (RePL)</a>	<p>&nbsp;</p>
-					<a class="au-cta-link" href="submitted-applications.html">Submitted applications</a>
-					<p class="m-t-0 form-text">View all submitted applications</p>
+				<h3>Application</h3>
+				<a href="02-course-details.html" class="au-direction-link">Remote Pilot Licence (RePL)</a><br>
+				<a href="#" class="au-direction-link">Aeronautical Radio Operator Certificate (AROC)</a><br>
+				<a href="#" class="au-direction-link">General English Language Notification (GELP)</a>
+				<p>&nbsp;</p>
+					<div class="activity">
+						<h3>Previous application</h3>
+						<strong>RePL Application</strong><br>
+						<a href="#" class=" ">Download RePL Application 28th Jul 18 (PDF | 32kB) </a>
+					</div>
+					<!--<p>&nbsp;</p>
+					<a class="au-cta-link" href="#">My permissions</a>
+					<p class="m-t-0 form-text">View your permissions</p>-->
+
 			</div>
 
 	</div>
@@ -168,12 +163,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
 <script>
-	$('.activity, #msg-repl, .in-progress,#link-deactive').hide();
+	$('.activity, #msg-repl, .in-progress').hide();
 	var type = window.location.hash.substr(1);
 	//alert (type);
 	if (type=='id-progress'){
-		$('.in-progress, #link-deactive').show();
-		$('#link-active').hide();
+		$('.in-progress').show();
 		//$('html').offset({top:0});
 	}
 	else if (type=='org-repl'){

@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <title>Bob's Flying school | My CASA</title>
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
 
 	<link rel="stylesheet" href="css/furnace.min.css">
 	<!--<link rel="stylesheet" href="css/lead.css">-->
@@ -59,24 +61,15 @@
 
 					<h3 class="label m-t-2">RePL Training</h3>
 					 <div class="form-section">
-						 Theory and Operational
-						 <!--<label class="au-control-input">
+						 <!--Theory and Operational-->
+						 <label class="au-control-input">
 							  <input class="au-control-input__input" type="radio" name="radio-ex">
 							  <span class="au-control-input__text">Both Theory and Operational</span>
 							</label><br>
 							<label class="au-control-input">
-							  <input class="au-control-input__input" type="radio" name="radio-ex" checked>
+							  <input class="au-control-input__input" type="radio" name="radio-ex">
 							  <span class="au-control-input__text">Only Operational</span>
-							</label>-->
-						 <!--<label class="au-control-input">
-							 <input class="au-control-input__input" type="checkbox" name="checkbox-ex">
-							 <span class="au-control-input__text">Both Theory and Operational</span>
-						 </label>
-						 <br>
-							<label class="au-control-input">
-							 <input class="au-control-input__input" type="checkbox" name="checkbox-ex">
-							 <span class="au-control-input__text">Only Operational</span>
-						 </label>-->
+							</label>
 						</div>
 					<!--<div class="form-section">
 						<label for="text-input">Course Number</label>
@@ -88,7 +81,7 @@
 							<div class="form-section">
 								<label for="category">Category</label>
 								<select id="category" class="au-select au-select--block">
-									<option value="1">Please select</option>
+									<option value="1" selected="selected">Please select</option>
 									<option value="2">Aeroplane</option>
 									<option value="3">Helicopter</option>
 									<option value="4">Multi Rotor</option>
@@ -99,7 +92,7 @@
 							<div class="form-section">
 								<label for="weight">Weight class</label>
 								<select id="weight" class="au-select au-select--block">
-									<option value="1">Please select</option>
+									<option value="1" selected="selected">Please select</option>
 									<option value="2">2kg up to 25kg</option>
 									<option value="3">25kg up to 150kg</option>
 									<option value="3">Greater than 150kg</option>
@@ -108,7 +101,7 @@
 							<div class="form-section">
 								<label for="type">Type</label>
 								<select id="type" class="au-select au-select--block">
-									<option value="1">Please select</option>
+									<option value="1" selected="selected">Please select</option>
 									<option value="2">Small</option>
 									<option value="3">Medium</option>
 								</select>
@@ -119,7 +112,7 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-8">
 				<a href="02-student.html" class="au-btn" id="next">Next</a>
 				<div class="save-exit">
 				<a href="01-organisation.html#id-progress" class="au-btn au-btn--secondary">
@@ -139,7 +132,19 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script>
 	$("#error").hide();
-
+	/*$('select').focusout(function() {
+		var option = $(this).val();
+		if(option == 1){
+			var label = $(this).parent().find('label').text();
+			//alert(label);
+			$(this).addClass('form-error');
+			$(this).before('<span style="color:#d82c52;">Please select an option for '+ label +' </span>');
+			$(this).on('change', function() {
+					$(this).removeClass('form-error');
+					$(this).parent().find('span').remove();
+			});
+		}
+	});*/
 	$('#next').click(function(){
 		var c = document.getElementById("category");
 		var cVal = c.options[c.selectedIndex].value;
@@ -170,7 +175,7 @@
 				});
 			}
 			if (cVal > 1 && wVal > 1 && tVal > 1) {
-				$("#error").hide();
+				//$("#error").hide();
 				return true;
 			}
 			return false;

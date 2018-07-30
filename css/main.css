@@ -60,6 +60,7 @@ html,body{
 .payment-summary{margin-bottom: 3rem;}
 .edit-student {background-color:#f6f6f6;}
 #none {background-color: whitesmoke;}
+.border {border-bottom: .07rem dashed #ebedf2;}
  /* Licence */
 .licence-card {
   display: block;
@@ -97,8 +98,15 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 .bg-dark {background-color:#bbbbbb!important;}
-.in-progress {margin-bottom:2rem;}
-/*Form help*/
+.in-progress {/* margin-bottom:2rem; */}
+.alt-row {
+  background-color:#fdfdfd;
+  margin:.8rem 0;
+  border-bottom: .07rem dashed #ebedf2;
+  border-top: .07rem dashed #ebedf2;
+  padding-top:.8rem;
+}
+/* Form help */
 label,.label{
   display: block!important;
   max-width: 100%;
@@ -145,6 +153,22 @@ label,.label{
 .date-entry .date-year{
 	width:46%;
 	float:left;
+}
+.page-item.active .page-link {
+    z-index: 1;
+    color: #fff;
+    background-color: #0080A2;
+    border-color: #0080A2;
+}
+.au-stretch_row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: auto;
+}
+.au-stretch_row {
+    display: table;
+    width: 100%;
 }
 /* heading */
 .au-header-heading{
@@ -209,9 +233,33 @@ footer{
   }*/
   #addPilot.m-t-3 {margin-top:0!important;}
 }
+@media only screen and (max-width: 574px) {
+  ul {margin:0 .8rem;}
+}
 @media only screen and (max-width: 420px) {
   .student-details .student{width:38%;}
   .student-details ul.grid li div {padding-right:0;}
 /*  .student-details .edit span, .student-details .delete span{display:none; visibility: hidden;}*/
 
+}
+.westpac .au-header {background-color:#555555;}
+.westpac h2 {
+  font-family:"Times New Roman","Times",serif,sans-serif;
+  color: #621a4b;
+}
+.westpac .au-btn{
+  border-color: #d5002b;
+  background-color: #d5002b;
+}
+.westpac a.au-btn.au-btn--secondary {
+  background-color: #fff;
+    color: #2d373e;
+  border-color: #2d373e;
+}
+.westpac label:before {
+  content:"*";
+  color:#d5002b;
+}
+.westpac footer{
+  background-color: #efece3;
 }
