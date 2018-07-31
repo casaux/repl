@@ -257,7 +257,7 @@ footer{
   border-color: #2d373e;
 }
 .westpac label:before {
-  content:"*";
+  content:"* ";
   color:#d5002b;
 }
 .westpac footer{
