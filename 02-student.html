@@ -236,7 +236,7 @@
 		$('test').hide();
 		//alert(val1);
 
-		if(val1 == "" || val2 == "" || val1 !== "Smith" || val1 !== "Williams"){
+		if(val1 == "" || val2 == ""){
 		//alert (timesClicked);
 			$('#error').show();
 			$('#save, #finalise-error, .test, #no-arn, #suspension, #existing-arn').hide();
@@ -277,7 +277,7 @@
 			}
 	}
 			if(val1 == "Wilson"){
-				$('#error, #finalise-error, #existing-arn, #suspension').hide();
+				$('#error, #finalise-error, #existing-arn, #suspension, #surname-error, #arn-error').hide();
 				$('#save').hide();
 				$("#arn-input, #surname-input").removeClass('form-error');
 				$('#no-arn').show();
