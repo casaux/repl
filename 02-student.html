@@ -80,7 +80,7 @@
 				</div>
 					<h2 class="au-display-xl m-t-2">Remote Pilot Licence (RePL)</h2>
 					<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
-
+<p class="au-callout">Maximum of 10 students entries allowed</p>
 					<div class="row student-details">
 						<ul class="col-md-12 grid">
 							<li class="bg-dark">
@@ -93,7 +93,7 @@
 							</li>
 							<li class="hidden" id="peter">
 								<div class="student">
-									<span class="student-name">Peter Smith</span>
+									<span class="student-name">1. Peter Smith</span>
 								</div>
 								<div class="edit">
 									<span class="student-arn">123 4568</span>
@@ -106,7 +106,7 @@
 							</li>
 							<li class="hidden" id="ava">
 								<div class="student">
-									<span class="student-name">Ava Williams</span>
+									<span class="student-name">2. Ava Williams</span>
 								</div>
 								<div class="edit">
 									<span class="student-arn">223 4568</span>
@@ -320,6 +320,7 @@
 		else {
 				$('#peter').addClass('hidden');
 				$('#save').hide();
+				$('#ava').find('.student-name').text('1. Ava Williams');
 		}
 		if ($('#ava').hasClass('hidden') && $('#peter').hasClass('hidden')){
 			$('.grid').addClass("hidden");
