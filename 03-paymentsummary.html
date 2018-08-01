@@ -196,15 +196,49 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 <script>
-	$('#error').hide();
+	$('#error, .back-add, #finalise-error').hide();
 	var checkBox = document.getElementById("declaration");
 	$('#summary').click(function(){
-		if (checkBox.checked == false){
-    	$('#error').show();
-			$('#declaration').parent().parent().addClass('form-error');
-			return false;
-  	}
-		else {return true;}
+	if (checkBox.checked == false){
+		$('#error').show();
+		$('#declaration').parent().parent().addClass('form-error');
+		return false;
+	}
+	else {return true;}
+	});
+	$('#delete-yes').click(function(){
+	if($('#peter').hasClass('hidden')){
+		$('#peter').removeClass('hidden');
+		$('.price').text('$40.00');
+		$('#ava').find('.student-name').text('1. Ava Williams');
+	}
+	else {
+			$('#peter').addClass('hidden');
+			$('#save').hide();
+	}
+	if ($('#ava').hasClass('hidden') && $('#peter').hasClass('hidden')){
+		$('.grid').addClass("hidden");
+		$('.grid').addClass("hidden");
+		document.getElementById("declaration").disabled = true;
+		$('.back-add, #finalise-error').show();
+		$('#error, #summary,.westpac, #summary-price').hide();
+	}
+	});
+	$('#delete-yes-ava').click(function(){
+	if($('#ava').hasClass('hidden')){
+		$('#ava').removeClass('hidden');
+	}
+	else {
+			$('#ava').addClass('hidden');
+			$('#save').hide();
+				$('.price').text('$40.00');
+	}
+	if ($('#ava').hasClass('hidden') && $('#peter').hasClass('hidden')){
+			$('.grid').addClass("hidden");
+			document.getElementById("declaration").disabled = true;
+			$('.back-add, #finalise-error').show();
+			$('#error, #summary,.westpac, #summary-price').hide();
+	}
 	});
 </script>
 </body>
