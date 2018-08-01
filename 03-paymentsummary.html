@@ -74,6 +74,9 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-8 col-md-12"><br>
+				<div role="alert" class="au-body au-page-alerts au-page-alerts--error" id="finalise-error">
+					<h3>Please add a student</h3>
+				</div>
 				<div role="alert" class="au-body au-page-alerts au-page-alerts--error" id="error">
 					<p>Declaration not completed</p>
 				</div>
@@ -85,9 +88,9 @@
 						<strong>Category:</strong> Multi Rotor<br>
 						<strong>Weight class: </strong>2kg up to 25kg
 						<br><br>
-						<strong>Remote Pilot Licence x2</strong><br>
-						<strong>Payment Total: $80.00</strong>
-
+						<div id="summary-price"><strong>Remote Pilot Licence x2</strong><br>
+						<strong>Payment Total: <span class="price">$80.00</span></strong>
+					</div>
 						<div class="student-details">
 							<div class="student-details">
 								<ul class="grid">
@@ -99,7 +102,7 @@
 												<strong>ARN</strong>
 											</div>
 									</li>
-									<li>
+									<li id="peter">
 										<div class="student">
 											<span class="student-name">1. Peter Smith</span>
 										</div>
@@ -116,7 +119,7 @@
 										</div>
 
 									</li>
-									<li>
+									<li id="ava">
 										<div class="student">
 											<span class="student-name">2. AVA Williams</span>
 										</div>
@@ -127,7 +130,7 @@
 											</a>-->
 										</div>
 										<div class="delete">
-											<a href="#" class="btn-delete"  data-toggle="modal" data-target="#deletePilot">
+											<a href="#" class="btn-delete"  data-toggle="modal" data-target="#deletePilot-ava">
 											  <span class="fas fa-minus-circle"></span> Delete
 											</a>
 										</div>
@@ -139,6 +142,8 @@
 
 					<!--<p><a href="01-organisation.html" class="au-direction-link">Go to Bob's Flying School</a></p>-->
 		</div>
+		<div class="back-add"><br><a class="au-btn" href="02-student.html">Add Students</a><br><br></div>
+		<div class="dec">
 		<h3>Declarations</h3>
 		<p class="au-callout" aria-label="Callout description1">
 			<label class="au-control-input">
@@ -148,6 +153,8 @@
 				</span>
 			</label>
 		</p>
+		</div>
+
 	</div>
 </div>
 </div>
@@ -155,7 +162,7 @@
 	<div class="row">
 		<div class="col-md-8"><br>
 			<a href="04-payment.html" class="au-btn" id="summary">Proceed to Payment</a>
-			<p>You will be directed to Westpac for payment</p>
+			<p class="westpac">You will be directed to Westpac for payment</p>
 			<div class="save-exit">
 			<a href="01-organisation.html#id-progress" class="au-btn au-btn--secondary">
 			Save and exit
@@ -180,11 +187,32 @@
 		</div>
 		<div class="modal-footer">
 			<button type="button" class="au-btn au-btn--secondary" data-dismiss="modal">No</button>
-			<button type="button" class="au-btn">Yes</button>
+			<button type="button" class="au-btn" data-dismiss="modal" id="delete-yes">Yes</button>
 		</div>
 	</div>
 </div>
 </div>
+<!-- Delete -->
+<div class="modal fade" id="deletePilot-ava" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal-content">
+	<div class="modal-header">
+		<h5 class="modal-title" id="exampleModalLongTitle">Delete</h5>
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	<div class="modal-body">
+		Are you sure you want to delete Ava Williams?
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="au-btn au-btn--secondary" data-dismiss="modal">No</button>
+		<button type="button" class="au-btn" data-dismiss="modal" id="delete-yes-ava">Yes</button>
+	</div>
+</div>
+</div>
+</div>
+
 </main>
 <footer class="footer">
 		<div class="footer-wrapper">
@@ -199,46 +227,47 @@
 	$('#error, .back-add, #finalise-error').hide();
 	var checkBox = document.getElementById("declaration");
 	$('#summary').click(function(){
-	if (checkBox.checked == false){
-		$('#error').show();
-		$('#declaration').parent().parent().addClass('form-error');
-		return false;
-	}
-	else {return true;}
+		if (checkBox.checked == false){
+    	$('#error').show();
+			$('#declaration').parent().parent().addClass('form-error');
+			return false;
+  	}
+		else {return true;}
 	});
 	$('#delete-yes').click(function(){
-	if($('#peter').hasClass('hidden')){
-		$('#peter').removeClass('hidden');
-		$('.price').text('$40.00');
-		$('#ava').find('.student-name').text('1. Ava Williams');
-	}
-	else {
-			$('#peter').addClass('hidden');
-			$('#save').hide();
-	}
-	if ($('#ava').hasClass('hidden') && $('#peter').hasClass('hidden')){
-		$('.grid').addClass("hidden");
-		$('.grid').addClass("hidden");
-		document.getElementById("declaration").disabled = true;
-		$('.back-add, #finalise-error').show();
-		$('#error, #summary,.westpac, #summary-price').hide();
-	}
-	});
-	$('#delete-yes-ava').click(function(){
-	if($('#ava').hasClass('hidden')){
-		$('#ava').removeClass('hidden');
-	}
-	else {
-			$('#ava').addClass('hidden');
-			$('#save').hide();
-				$('.price').text('$40.00');
-	}
-	if ($('#ava').hasClass('hidden') && $('#peter').hasClass('hidden')){
+		if($('#peter').hasClass('hidden')){
+			$('#peter').removeClass('hidden');
+			$('.price').text('$40.00');
+
+		}
+		else {
+				$('#peter').addClass('hidden');
+				$('#save').hide();
+				$('#ava').find('.student-name').text('1. Ava Williams');
+		}
+		if ($('#ava').hasClass('hidden') && $('#peter').hasClass('hidden')){
+			$('.grid').addClass("hidden");
 			$('.grid').addClass("hidden");
 			document.getElementById("declaration").disabled = true;
 			$('.back-add, #finalise-error').show();
 			$('#error, #summary,.westpac, #summary-price').hide();
-	}
+		}
+	});
+	$('#delete-yes-ava').click(function(){
+		if($('#ava').hasClass('hidden')){
+			$('#ava').removeClass('hidden');
+		}
+		else {
+				$('#ava').addClass('hidden');
+				$('#save').hide();
+					$('.price').text('$40.00');
+		}
+		if ($('#ava').hasClass('hidden') && $('#peter').hasClass('hidden')){
+				$('.grid').addClass("hidden");
+				document.getElementById("declaration").disabled = true;
+				$('.back-add, #finalise-error').show();
+				$('#error, #summary,.westpac, #summary-price').hide();
+		}
 	});
 </script>
 </body>
