@@ -232,9 +232,9 @@ footer{
   }
   .au-body h2, .au-body .au-display-xl, .au-display-xl{font-size:1.5rem;}
   .au-body h3, .au-body .au-display-lg, .au-display-lg {font-size:1.2rem;}
-  .container{
+  /*.container{
   	max-width:660px;
-  }
+  }*/
   .grid{margin:0 1rem;}
 
   .hidden-sm-down {display: none; visibility: hidden;height: 0px;}
