@@ -52,7 +52,7 @@
 
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-6 col-md-12"><br>
+			<div class="col-lg-6 col-md-12"><br><br>
 				<div role="alert" class="au-body au-page-alerts au-page-alerts--success" id="save">
 					<h3>Saved successfully</h3>
 				</div>
@@ -66,17 +66,12 @@
 					<h3>100 points of identification required</h3>
 					<p>This student has not completed 100 points of identification for their ARN and cannot be issued a RePL. An email notice has been sent to the student.</p>
 				</div>
-				<!--<div role="alert" class="au-body au-page-alerts au-page-alerts--error" id="existing-arn">
-					<h3>This student already has an existing RePL with a:</h3>
-					<ul>
-						<li>Category - Multi rotor</li>
-						<li>Weight - Class 2kg to 25kg</li>
-						<li>Type - Small</li>
-					</ul>
-				</div>-->
+				<div role="alert" class="au-body au-page-alerts au-page-alerts--error" id="existing-arn">
+					<h3>This student already has an existing RePL with the same category &amp; weight class.</h3>
+				</div>
 				<div role="alert" class="au-body au-page-alerts au-page-alerts--error" id="suspension">
-					<h3>Student has a suspension on their ARN</h3>
-					<!--<p>This student has a suspension on their ARN. They will not be able to receive a RePL, please inform the student. An email has also been sent to the student about their suspension and RePL.</p>-->
+					<h3>Unsuccessful adding student</h3>
+					<p>Call us on 131 757 or contact us via our <a href="https://www.casa.gov.au/aircraft/webform/remotely-piloted-aircraft-operational-enquiries">online enquiry form</a>, for further information.</p>
 				</div>
 					<h2 class="au-display-xl m-t-2">Remote Pilot Licence (RePL)</h2>
 					<a class="au-direction-link au-direction-link--left" href="javascript:history.back()">Back</a>
@@ -277,26 +272,26 @@
 				//timesClicked = 0;
 			}
 	}
-			if(val1 == "Wilson"){
+			if(val1 == "Wilson" || val1 == "wilson"){
 				$('#error, #finalise-error, #existing-arn, #suspension, #surname-error, #arn-error').hide();
 				$('#save').hide();
 				$("#arn-input, #surname-input").removeClass('form-error');
 				$('#no-arn').show();
 				window.scrollTo(0, 0);
 			}
-			if(val1 == "Brown"){
+			if(val1 == "Brown" || val1 == "brown" ){
 				$('#error, #no-arn, #finalise-error, #existing-arn').hide();
 				$('#save').hide();
 				$("#arn-input, #surname-input").removeClass('form-error');
 				$('#suspension').show();
 				window.scrollTo(0, 0);
 			}
-			/*if(val1 == "Johnson"){
+			if(val1 == "Johnson" || val1 == "johnson"){
 				$('#error, #no-arn, #finalise-error, #suspension, #surname-error, #arn-error').hide();
 				$('#save').hide();
 				$("#arn-input, #surname-input").removeClass('form-error');
 				$('#existing-arn').show();
-			}*/
+			}
 	});
 	$('#finalise').click(function(){
 		var classPeter = $("#peter").hasClass("hidden");
