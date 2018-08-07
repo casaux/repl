@@ -263,6 +263,7 @@
 				$('#save, .student-details').show();
 				$('.grid, #peter').removeClass('hidden');
 				//timesClicked++;
+				window.scrollTo(0, 0);
 			}
 			else if(!classPeter && classAva){
 				//alert(surname);
@@ -274,10 +275,12 @@
 				$('#save').show();
 				$('#ava').removeClass('hidden');
 				//timesClicked = 0;
+				window.scrollTo(0, 0);
 			}
 			if (!classPeter){
 				$('#error, #arn-error, #surname-error, #finalise-error, .test, #no-arn, #suspension, #existing-arn,#save').hide();
 				$('#existing-list').show();
+				window.scrollTo(0, 0);
 			}
 	}
 			if(val1 == "Wilson" || val1 == "wilson"){
@@ -299,6 +302,7 @@
 				$('#save').hide();
 				$("#arn-input, #surname-input").removeClass('form-error');
 				$('#existing-arn').show();
+				window.scrollTo(0, 0);
 			}
 	});
 	$('#finalise').click(function(){
@@ -312,6 +316,7 @@
 				document.getElementById("surname-error").textContent="Please enter a Family name";
 				$("#arn-input, #surname-input").addClass('form-error');
 				$("#arn-error, #surname-error").show();
+				window.scrollTo(0, 0);
 				return false;
 		}
 		else{
