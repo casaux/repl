@@ -154,12 +154,11 @@
 											<strong></strong>
 										</div>
 										<div class="col-md-3 col-xs-4 text-right p-r-1 payment hidden-sm-down">
-											Total: $65
+											<span class="price">Total: $65</span>
 										</div>
 										<div class="delete hidden-md-up payment-total text-right">
-												Total: $65
+											<span class="price">Total: $65</span>
 										</div>
-
 									</li>
 								</ul>
 
@@ -261,14 +260,12 @@
 	$('#delete-yes').click(function(){
 		if($('#peter').hasClass('hidden')){
 			$('#peter').removeClass('hidden');
-
-
 		}
 		else {
 				$('#peter').addClass('hidden');
 				$('#save').hide();
 				$('#ava').find('.student-name').text('1. Ava Williams');
-
+				$('.price').text('$40');
 		}
 		if ($('#ava').hasClass('hidden') && $('#peter').hasClass('hidden')){
 			$('.grid').addClass("hidden");
@@ -285,7 +282,7 @@
 		else {
 				$('#ava').addClass('hidden');
 				$('#save').hide();
-					$('.price').text('$40.00');
+					$('.price').text('$25');
 		}
 		if ($('#ava').hasClass('hidden') && $('#peter').hasClass('hidden')){
 				$('.grid').addClass("hidden");
