@@ -332,6 +332,7 @@
 				$('#peter').addClass('hidden');
 				$('#save').hide();
 				$('#ava').find('.student-name').text('1. Ava Williams');
+				$('#error, #arn-error,#surname-error, #finalise-error, .test, #no-arn, #suspension, #existing-arn,#existing-list').hide();
 		}
 		if ($('#ava').hasClass('hidden') && $('#peter').hasClass('hidden')){
 			$('.grid').addClass("hidden");
@@ -345,9 +346,11 @@
 		else {
 				$('#ava').addClass('hidden');
 				$('#save').hide();
+				$('#error, #arn-error,#surname-error, #finalise-error, .test, #no-arn, #suspension, #existing-arn,#existing-list').hide();
 		}
 		if ($('#ava').hasClass('hidden') && $('#peter').hasClass('hidden')){
 			$('.grid').addClass("hidden");
+			$('#error, #arn-error,#surname-error, #finalise-error, .test, #no-arn, #suspension, #existing-arn,#existing-list').hide();
 		}
 	});
 
