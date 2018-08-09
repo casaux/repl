@@ -13,6 +13,7 @@
 
 <body class="live-demo au-body au-grid js">
 	<header class="au-header logo au-body au-body--dark" role="banner">
+  <a class="skip-link" href="#main-content">Skip to content</a>
 	  <div class="container">
 	    <div class="row">
 	      <div class="col-md-9 col-xs-7">
@@ -54,7 +55,7 @@
 		<div class="row">
 			<div class="col-lg-6 col-md-12"><br><br>
 				<div role="alert" class="au-body au-page-alerts au-page-alerts--success" id="save">
-					<h3>Saved successfully</h3>
+					<h3>Student added to application</h3>
 				</div>
 				<div role="alert" class="au-body au-page-alerts au-page-alerts--error" id="error">
 					<h3>Student not found</h3>
@@ -67,8 +68,8 @@
 					<p>This student has not completed 100 points of identification for their ARN. The student has been notified via email.</p>
 				</div>
 				<div role="alert" class="au-body au-page-alerts au-page-alerts--error" id="existing-arn">
-					<h3>Existing RePL with the same category &amp; weight class.</h3>
-					<p>Call us on 131 757 or contact us via our <a href="https://www.casa.gov.au/aircraft/webform/remotely-piloted-aircraft-operational-enquiries">online enquiry form</a>, for further information.</p>
+					<h3>A RePL with the same category & weight class already exists for this student.</h3>
+					<!--<p>Call us on 131 757 or contact us via our <a href="https://www.casa.gov.au/aircraft/webform/remotely-piloted-aircraft-operational-enquiries">online enquiry form</a>, for further information.</p>-->
 				</div>
 				<div role="alert" class="au-body au-page-alerts au-page-alerts--error" id="suspension">
 					<h3>Unable to add student</h3>
@@ -248,6 +249,7 @@
 			});
 		}
 		if (val1 == "Smith" || val1 == "Williams" || val1 == "smith" || val1 == "williams"){
+			$('#error').hide();
 			var classPeter = $("#peter").hasClass("hidden");
 			var classAva = $("#ava").hasClass("hidden");
 			if(classPeter){
@@ -266,7 +268,7 @@
 				//alert(surname);
 				$("#arn-input").val("");
 				$("#surname-input").val("");
-				$('#error, #arn-error, #surname-error, #finalise-error, .test, #no-arn, #suspension, #existing-arn,#existing-list').hide();
+				$('#error, #arn-error, #surname-error, #finalise-error, .test, #no-arn, #suspension, #existing-arn, #existing-list').hide();
 				$( "#arn-input" ).removeClass('form-error');
 				$( "#surname-input" ).removeClass('form-error');
 				$('#save').show();
@@ -274,11 +276,14 @@
 				//timesClicked = 0;
 				window.scrollTo(0, 0);
 			}
-			if (!classPeter){
+			/*if (!classPeter || !classAva){
 				$('#error, #arn-error, #surname-error, #finalise-error, .test, #no-arn, #suspension, #existing-arn,#save').hide();
 				$('#existing-list').show();
 				window.scrollTo(0, 0);
 			}
+			else {
+				$('#existing-list').hide();
+			}*/
 	}
 			if(val1 == "Wilson" || val1 == "wilson"){
 				$('#error, #finalise-error, #existing-arn, #suspension, #surname-error, #arn-error,#existing-list').hide();
@@ -313,7 +318,7 @@
 		if (classPeter && classAva){
 				$('#finalise-error').show();
 				$('#error, #arn-error, #surname-error, #save, .test, #no-arn, #suspension, #existing-arn,#existing-list').hide();
-				document.getElementById("arn-error").textContent="Please enter a ARN";
+				document.getElementById("arn-error").textContent="Please enter an ARN";
 				document.getElementById("surname-error").textContent="Please enter a Family name";
 				$("#arn-input, #surname-input").addClass('form-error');
 				$("#arn-error, #surname-error").show();

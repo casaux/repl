@@ -7,6 +7,7 @@ html,body{
 .au-header__brand .au-header__brand-image{
   max-width:15rem;
 }
+
 .au-body p {max-width:100%!important;}
 .au-body.au-body--dark{background: #0080A2;}
 .au-header {padding:1.8rem 0;!important}
@@ -116,6 +117,18 @@ label,.label{
   font-size: 1rem;
   font-weight: 600;
 }
+.skip-link{
+   position: absolute;
+   left: 21%;
+   top: -2.5em;
+   padding: 0.1rem;
+}
+.skip-link:hover, .skip-link:focus{
+  position: absolute;
+  top:0px;
+  left:21%;
+}
+#main-content{outline:none;}
 /*#surname-input {
   text-transform: capitalize;
 }*/
