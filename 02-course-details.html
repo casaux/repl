@@ -149,9 +149,14 @@
 		}
 	});*/
 	$('#type').parent().addClass('hidden');
+	$('.save-exit').hide();
+	$('#weight, #category').on('change', function() {
+		$('.save-exit').show();
+	});
 	$('#weight').on('change', function() {
 		var w = document.getElementById("weight");
 		var wVal = w.options[w.selectedIndex].value;
+
 		if (wVal == 3){
 			$('#type').parent().removeClass('hidden');
 		}
