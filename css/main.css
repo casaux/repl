@@ -95,7 +95,7 @@ html,body{
 .padding-0{padding:0!important;}
 .p-r-1{padding-right:1.5rem!important;}
 .save-exit{margin-top:4rem;border-top:1px solid #e1e8ed;padding:2rem 0;}
-.hidden {display: none; visibility: hidden;height:0px;}
+.hidden {display: none!important; visibility: hidden;height:0px!important; padding;0px!important;margin:0!important;}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
