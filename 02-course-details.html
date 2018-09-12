@@ -98,9 +98,17 @@
 									<option value="3">Small - Up to 25kg</option>
 									<option value="4">Medium - Up to 150kg</option>
 									<option value="5">Large - More than 150kg</option>
-
 								</select>
 							</div>
+							<div class="form-section">
+								<label for="capacity">Capacity</label>
+								<select id="capacity" class="au-select au-select--block">
+									<option value="1" selected="selected">Please select</option>
+									<option value="2">Envelope capacity less than 100m&sup3; </option>
+									<option value="3">Envelope capacity more than 100m&sup3; </option>
+								</select>
+							</div>				
+				
 							<div class="form-section">
 								<label for="rpatypeaero">RPA Type</label>
 								<select id="rpatypeaero" class="au-select au-select--block">
@@ -209,11 +217,40 @@
 			});
 		}
 	});*/
+
+		$('#capacity').parent().addClass('hidden');
+	$('.save-exit').hide();
+	$('#category').on('change', function() {
+		$('.save-exit').show();
+	});
+	$('#category').on('change', function() {
+		var c = document.getElementById("category");
+		var cVal = c.options[c.selectedIndex].value;
+			if  (cVal == 5){
+			$('#capacity').parent().removeClass('hidden');
+			$('#rpatypeair').parent().removeClass('hidden');
+		}
+	});
+	
+			$('#weight').parent().addClass('hidden');
+	$('.save-exit').hide();
+	$('#category').on('change', function() {
+		$('.save-exit').show();
+	});
+	$('#category').on('change', function() {
+		var c = document.getElementById("category");
+		var cVal = c.options[c.selectedIndex].value;
+			if  (cVal == 1 || cVal == 2 || cVal == 3 || cVal == 4 || cVal == 6){
+			$('#weight').parent().removeClass('hidden');
+		}
+	});
+		
 	$('#rpatypeaero').parent().addClass('hidden');
 	$('.save-exit').hide();
 	$('#weight, #category').on('change', function() {
 		$('.save-exit').show();
 	});
+	
 	$('#weight').on('change', function() {
 		var c = document.getElementById("category");
 		var cVal = c.options[c.selectedIndex].value;
