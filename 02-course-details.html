@@ -229,9 +229,19 @@
 			if  (cVal == 5){
 			$('#capacity').parent().removeClass('hidden');
 			$('#rpatypeair').parent().removeClass('hidden');
+			$('#weight').parent().addClass('hidden');	
 			}
 	});
 	
+		$('#category').on('change', function() {
+		var c = document.getElementById("category");
+		var cVal = c.options[c.selectedIndex].value;
+			if  (cVal == 1 || cVal == 2 || cVal == 3 || cVal == 4 || cVal == 6){
+			$('#capacity').parent().addClass('hidden');
+			$('#rpatypeair').parent().addClass('hidden');
+			}
+	});
+		
 			$('#weight').parent().addClass('hidden');
 	$('.save-exit').hide();
 	$('#category').on('change', function() {
