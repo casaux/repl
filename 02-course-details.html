@@ -94,19 +94,20 @@
 								<label for="weight">Weight class</label>
 								<select id="weight" class="au-select au-select--block">
 									<option value="1" selected="selected">Please select</option>
-									<option value="2">Up to 7kg</option>
-									<option value="2">Up to 25kg</option>
-									<option value="3">Up to 150kg</option>
+									<option value="2">Restricted - Up to 25kg</option>
+									<option value="3">Small - Up to 25kg</option>
+									<option value="4">Medium - Up to 150kg</option>
+									<option value="4">Large - More than 150kg</option>
 
 								</select>
 							</div>
 							<div class="form-section">
-								<label for="type">Type</label>
+								<label for="type">RPA Type</label>
 								<select id="type" class="au-select au-select--block">
 									<option value="1" selected="selected">Please select</option>
-									<option value="2">Small</option>
-									<option value="3">Medium</option>
-									<option value="3">Large</option>
+									<option value="2">xxxx</option>
+									<option value="3">xxxx</option>
+									<option value="3">xxxx</option>
 								</select>
 							</div>
 							<p>&nbsp;</p>
@@ -157,7 +158,7 @@
 		var w = document.getElementById("weight");
 		var wVal = w.options[w.selectedIndex].value;
 
-		if (wVal == 3){
+		if (wVal == 4){
 			$('#type').parent().removeClass('hidden');
 		}
 		else {
